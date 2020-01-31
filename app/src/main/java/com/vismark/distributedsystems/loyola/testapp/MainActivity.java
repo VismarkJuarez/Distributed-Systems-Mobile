@@ -2,9 +2,16 @@ package com.vismark.distributedsystems.loyola.testapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 "Button1 has been pressed.",
                 Toast.LENGTH_LONG)
                 .show();
+
+        sendNetworkRequest("This is an example payload");
     }
 
     private void incrementAnswer2Count() {
@@ -81,4 +90,38 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG)
                 .show();
     }
+
+    private void sendNetworkRequest(String data) {
+
+        Log.i("INFO","Attempting to make REST call now!");
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:5000/")
+                .addConverterFactory(GsonConverterFactory.create());
+
+        Retrofit retrofit = builder.build();
+
+        TestClient client = retrofit.create(TestClient.class);
+        Call<String> call = client.updateAnswer1Count(data);
+
+        call.enqueue(new Callback<String>() {
+
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Toast.makeText(getApplicationContext(),
+                        "Call made successfully!",
+                        Toast.LENGTH_LONG)
+                        .show();
+                Log.i("INFO","Call waas made successfully!");
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.i("ERROR","Something blew up!");
+                t.printStackTrace();
+                Log.i("INFO", call.request().toString());
+            }
+        });
+    }
+
 }
