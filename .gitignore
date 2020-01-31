@@ -3,3 +3,6 @@ build.gradle
 .gradle/
 .idea/
 local.properties
+app/app.iml
+gradle/
+Distributed-Ststems-Mobile.iml
