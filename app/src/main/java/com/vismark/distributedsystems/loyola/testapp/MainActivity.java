@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        renderAllQuestions();
+        Button loadQuestionsButton = (Button)findViewById(R.id.loadQuestionsButton);
+        loadQuestionsButton.setOnClickListener(new loadQuestionsButtonClicked());
 
         Button firstButton = (Button)findViewById(R.id.submitButton);
 
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             submitAnswer();
+        }
+    }
+
+    private class loadQuestionsButtonClicked implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            renderAllQuestions();
         }
     }
 
