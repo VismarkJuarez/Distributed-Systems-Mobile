@@ -4,6 +4,7 @@ public class Question {
     private String questionType;
     private int questionId;
     private String question;
+
     private String multipleChoiceOption1;
     private String multipleChoiceOption2;
     private String multipleChoiceOption3;
@@ -54,6 +55,18 @@ public class Question {
 
     public String getMultipleChoiceOption3() {
         return multipleChoiceOption3;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionType='" + questionType + '\'' +
+                ", questionId=" + questionId +
+                ", question='" + question + '\'' +
+                ", multipleChoiceOption1='" + multipleChoiceOption1 + '\'' +
+                ", multipleChoiceOption2='" + multipleChoiceOption2 + '\'' +
+                ", multipleChoiceOption3='" + multipleChoiceOption3 + '\'' +
+                '}';
     }
 
 }
