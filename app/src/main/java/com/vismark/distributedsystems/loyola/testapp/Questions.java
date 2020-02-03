@@ -1,5 +1,8 @@
 package com.vismark.distributedsystems.loyola.testapp;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.List;
 
 public class Questions {
@@ -19,8 +22,7 @@ public class Questions {
 
     @Override
     public String toString() {
-        return "Questions{" +
-                "questions=" + questions +
-                '}';
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
     }
 }

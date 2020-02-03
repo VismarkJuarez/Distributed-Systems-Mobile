@@ -1,13 +1,16 @@
 package com.vismark.distributedsystems.loyola.testapp;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Question {
     private String questionType;
     private int questionId;
     private String question;
 
-    private String multipleChoiceOption1;
-    private String multipleChoiceOption2;
-    private String multipleChoiceOption3;
+    private String multipleChoiceOptionA;
+    private String multipleChoiceOptionB;
+    private String multipleChoiceOptionC;
 
     public void setQuestionType(String questionType) {
         this.questionType = questionType;
@@ -21,16 +24,16 @@ public class Question {
         this.question = question;
     }
 
-    public void setMultipleChoiceOption1(String multipleChoiceOption1) {
-        this.multipleChoiceOption1 = multipleChoiceOption1;
+    public void setMultipleChoiceOptionA(String multipleChoiceOptionA) {
+        this.multipleChoiceOptionA = multipleChoiceOptionA;
     }
 
-    public void setMultipleChoiceOption2(String multipleChoiceOption2) {
-        this.multipleChoiceOption2 = multipleChoiceOption2;
+    public void setMultipleChoiceOptionB(String multipleChoiceOptionB) {
+        this.multipleChoiceOptionB = multipleChoiceOptionB;
     }
 
-    public void setMultipleChoiceOption3(String multipleChoiceOption3) {
-        this.multipleChoiceOption3 = multipleChoiceOption3;
+    public void setMultipleChoiceOptionC(String multipleChoiceOptionC) {
+        this.multipleChoiceOptionC = multipleChoiceOptionC;
     }
 
     public String getQuestionType() {
@@ -45,28 +48,22 @@ public class Question {
         return question;
     }
 
-    public String getMultipleChoiceOption1() {
-        return multipleChoiceOption1;
+    public String getMultipleChoiceOptionA() {
+        return multipleChoiceOptionA;
     }
 
-    public String getMultipleChoiceOption2() {
-        return multipleChoiceOption2;
+    public String getMultipleChoiceOptionB() {
+        return multipleChoiceOptionB;
     }
 
-    public String getMultipleChoiceOption3() {
-        return multipleChoiceOption3;
+    public String getMultipleChoiceOptionC() {
+        return multipleChoiceOptionC;
     }
 
     @Override
     public String toString() {
-        return "Question{" +
-                "questionType='" + questionType + '\'' +
-                ", questionId=" + questionId +
-                ", question='" + question + '\'' +
-                ", multipleChoiceOption1='" + multipleChoiceOption1 + '\'' +
-                ", multipleChoiceOption2='" + multipleChoiceOption2 + '\'' +
-                ", multipleChoiceOption3='" + multipleChoiceOption3 + '\'' +
-                '}';
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
     }
 
 }
