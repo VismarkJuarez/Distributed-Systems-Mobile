@@ -22,7 +22,8 @@
             android:id="@+id/questionLabel"
             android:layout_below="@id/loadQuestionsButton"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:scrollbars = "vertical"/>
 
         <EditText
             android:id="@+id/questionIdLabel"

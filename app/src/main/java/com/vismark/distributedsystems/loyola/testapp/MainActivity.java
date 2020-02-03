@@ -2,6 +2,7 @@ package com.vismark.distributedsystems.loyola.testapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -55,17 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void renderAllQuestions(String allQuestions) {
         Log.i("INFO", "Trying to set text");
+        //TODO references to TextView and setting movement method should be global -- or at least
+        //contained within a startup method.
         TextView questionTextView = (TextView)findViewById(R.id.questionLabel);
+        questionTextView.setMovementMethod(new ScrollingMovementMethod());
 
         Log.i("INFO", "Trying to set to: " + allQuestions);
         questionTextView.setText(allQuestions);
     }
-
-//    private Questions convertQuestionsJSONToQuestionsObject(String questionsJson) {
-//        Gson g = new Gson();
-//        Questions questions = g.fromJson(questionsJson, Questions.class);
-//        return questions;
-//    }
 
     private String fetchAllQuestions() {
         Log.i("INFO","Attempting to fetch all Questions from the instructor server!");
@@ -101,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        return "All good";
+        return "All good"; //TODO refactor this out
 
     }
 
