@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
         Button loadQuestionsButton = (Button)findViewById(R.id.loadQuestionsButton);
         loadQuestionsButton.setOnClickListener(new loadQuestionsButtonClicked());
 
-        Button firstButton = (Button)findViewById(R.id.submitButton);
+        Button submitButton = (Button)findViewById(R.id.submitButton);
 
 
         //Setting onClick behaviour
-        firstButton.setOnClickListener(new buttonOneClicked());
+        submitButton.setOnClickListener(new submitButtonClicked());
     }
 
     //OnClick button handler classes
-    private class buttonOneClicked implements View.OnClickListener {
+    private class submitButtonClicked implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             submitAnswer();
@@ -108,26 +108,38 @@ public class MainActivity extends AppCompatActivity {
 
     //Ancillary methods
     private void submitAnswer() {
+
+        //extract the questionId, as specified by the student
+        int questionId = Integer.parseInt(((EditText)findViewById(R.id.questionIdLabel)).getText().toString());
+        //int questionIdAsInt = Integer.parseInt(questionIdAsString);
+
+        //extract the answer, as specified by the student (TODO this is ugly -- cleanup required.
+        String studentAnswer = ((EditText)findViewById(R.id.studentAnswerEditText)).getText().toString();
+
+        Answer answerData = new Answer(questionId, studentAnswer);
+
         Toast.makeText(getApplicationContext(),
                 "Answer has been submitted.",
                 Toast.LENGTH_LONG)
                 .show();
 
-        sendNetworkRequest("This is an example payload");
+        Log.i("INFO", "SENDING THE FOLLOWING PAYLOAD: " + answerData.toString());
+
+        sendAnswer(answerData);
     }
 
-    private void sendNetworkRequest(String data) {
+    private void sendAnswer(Answer answerData) {
 
         Log.i("INFO","Attempting to make REST call now!");
 
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000/")
+                .baseUrl("http://10.0.2.2:5001/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
 
         TestClient client = retrofit.create(TestClient.class);
-        Call<String> call = client.updateAnswer1Count(data);
+        Call<String> call = client.submitAnswer(answerData);
 
         call.enqueue(new Callback<String>() {
 
