@@ -1,5 +1,8 @@
 package com.vismark.distributedsystems.loyola.testapp;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Answer {
     private int questionId;
     private String studentAnswer;
@@ -23,5 +26,11 @@ public class Answer {
 
     public String getStudentAnswer() {
         return studentAnswer;
+    }
+
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
     }
 }
