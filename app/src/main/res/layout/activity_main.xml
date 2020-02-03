@@ -11,37 +11,20 @@
         android:layout_height="match_parent"
         android:orientation = "vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionLabel"
+            />
+
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/submitButton"
             android:layout_width="252dp"
             android:layout_height="53dp"
-            android:text="Answer 1"
+            android:text="Submit Answer"
             tools:layout_editor_absoluteX="54dp"
             tools:layout_editor_absoluteY="297dp" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="252dp"
-            android:layout_height="53dp"
-            android:text="Answer 2"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="218dp" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="252dp"
-            android:layout_height="53dp"
-            android:text="Answer 3"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="135dp" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="252dp"
-            android:layout_height="53dp"
-            android:text="Answer 4"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="52dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
