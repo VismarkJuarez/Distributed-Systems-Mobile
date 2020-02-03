@@ -10,6 +10,9 @@ public interface TestClient {
     @PUT("question1")
     Call<String> updateAnswer1Count(@Body String data);
 
-    @GET("submitAnswer")
+    @GET("fetchAllQuestions")
+    Call<Questions> fetchAllQuestions();
+
+    @POST("submitAnswer")
     Call<String> submitAnswer(@Body Answer answer);
 }
