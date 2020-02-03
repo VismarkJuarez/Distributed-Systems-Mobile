@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Creating references to each of the 4 buttons
+        renderAllQuestions();
+
         Button firstButton = (Button)findViewById(R.id.submitButton);
 
 
@@ -35,6 +38,51 @@ public class MainActivity extends AppCompatActivity {
             submitAnswer();
         }
     }
+
+    private void renderAllQuestions() {
+        String questionsJson = fetchAllQuestions();
+    }
+
+    private String fetchAllQuestions() {
+        Log.i("INFO","Attempting to fetch all Questions from the instructor server!");
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:5001/")
+                .addConverterFactory(GsonConverterFactory.create());
+
+
+        Retrofit retrofit = builder.build();
+
+        TestClient client = retrofit.create(TestClient.class);
+        Call<Questions> call = client.fetchAllQuestions();
+
+        call.enqueue(new Callback<Questions>() {
+
+            @Override
+            public void onResponse(Call<Questions> call, Response<Questions> response) {
+                Toast.makeText(getApplicationContext(),
+                        "Call made successfully!",
+                        Toast.LENGTH_LONG)
+                        .show();
+                Log.i("INFO","Call was made successfully!");
+
+                Log.i("INFO", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<Questions> call, Throwable t) {
+                Log.i("ERROR","Something blew up!");
+                t.printStackTrace();
+                Log.i("INFO", call.request().toString());
+            }
+        });
+
+        return "All good";
+
+    }
+
+
+
 
     //Ancillary methods
     private void submitAnswer() {
