@@ -1,15 +1,15 @@
 package com.vismark.distributedsystems.loyola.testapp;
 
 public class Answer {
-    private long questionId;
+    private int questionId;
     private String studentAnswer;
 
-    public Answer(long questionId, String studentAnswer) {
+    public Answer(int questionId, String studentAnswer) {
         this.questionId = questionId;
         this.studentAnswer = studentAnswer;
     }
 
-    public void setQuestionId(long questionId) {
+    public void setQuestionId(int questionId) {
         this.questionId = questionId;
     }
 
@@ -17,7 +17,7 @@ public class Answer {
         this.studentAnswer = studentAnswer;
     }
 
-    public long getQuestionId() {
+    public int getQuestionId() {
         return questionId;
     }
 
