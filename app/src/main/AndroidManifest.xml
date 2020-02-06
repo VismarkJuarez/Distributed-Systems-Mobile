@@ -14,7 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.loyola.distributedsystems439.spring2020.testapp.UserInstructorSelection"></activity>
+        <activity android:name="com.loyola.distributedsystems439.spring2020.testapp.UserInstructorSelection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.loyola.distributedsystems439.spring2020.testapp.SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -25,11 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.loyola.distributedsystems439.spring2020.testapp.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
     </application>
 
