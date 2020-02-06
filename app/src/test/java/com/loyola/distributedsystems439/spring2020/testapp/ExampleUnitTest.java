@@ -1,4 +1,4 @@
-package com.vismark.distributedsystems.loyola.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp;
 
 import org.junit.Test;
 

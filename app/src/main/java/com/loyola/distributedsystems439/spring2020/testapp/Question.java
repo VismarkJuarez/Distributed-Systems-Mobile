@@ -1,4 +1,4 @@
-package com.vismark.distributedsystems.loyola.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,9 +1,11 @@
-package com.vismark.distributedsystems.loyola.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.vismark.distributedsystems.loyola.testapp.R;
 
 public class SplashScreen extends AppCompatActivity {
 

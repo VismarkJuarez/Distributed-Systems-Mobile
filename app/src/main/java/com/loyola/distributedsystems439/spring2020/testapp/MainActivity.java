@@ -1,7 +1,5 @@
-package com.vismark.distributedsystems.loyola.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp;
 
-import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -12,11 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
-import org.json.JSONObject;
-
-import java.util.List;
+import com.vismark.distributedsystems.loyola.testapp.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
