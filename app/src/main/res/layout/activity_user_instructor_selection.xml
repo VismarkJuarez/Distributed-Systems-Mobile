@@ -4,6 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.loyola.distributedsystems439.spring2020.testapp.UserInstructorSelection">
+    tools:context="com.loyola.distributedsystems439.spring2020.testapp.MainActivity">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/instructorStudentSelectionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="10dp"
+        android:layout_centerVertical="true"
+        android:textSize="75dp"
+        android:textColor="#454545"
+        android:text="I am a(n):"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/instructorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instructor"
+        android:layout_below="@id/instructorStudentSelectionTextView"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:id="@+id/studentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        android:layout_below="@id/instructorButton"/>
+
+</RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
