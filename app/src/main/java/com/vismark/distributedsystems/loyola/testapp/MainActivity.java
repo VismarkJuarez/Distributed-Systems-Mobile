@@ -26,22 +26,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Display the app's splash screen for 4 seconds
-    private static int SPLASH_SCREEN_TIME_OUT = 5000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent homeIntent = new Intent(MainActivity.this, SplashScreenActivity.class);
-                startActivity(homeIntent);
-                finish();
-            }
-        }, SPLASH_SCREEN_TIME_OUT);
 
         Button loadQuestionsButton = (Button)findViewById(R.id.loadQuestionsButton);
         loadQuestionsButton.setOnClickListener(new loadQuestionsButtonClicked());
