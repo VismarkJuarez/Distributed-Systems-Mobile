@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.vismark.distributedsystems.loyola.testapp"
+    package="com.loyola.distributedsystems439.spring2020.testapp"
     tools:ignore="ExtraText">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,18 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name="com.loyola.distributedsystems439.spring2020.testapp.UserInstructorSelection"></activity>
         <activity
             android:name="com.loyola.distributedsystems439.spring2020.testapp.SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name="com.loyola.distributedsystems439.spring2020.testapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

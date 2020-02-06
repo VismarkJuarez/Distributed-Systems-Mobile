@@ -5,8 +5,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.vismark.distributedsystems.loyola.testapp.R;
-
 public class SplashScreen extends AppCompatActivity {
 
     private static int SPLASH_SCREEN_TIMEOUT_MILLIS = 4000;

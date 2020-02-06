@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.vismark.distributedsystems.loyola.testapp.R;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
