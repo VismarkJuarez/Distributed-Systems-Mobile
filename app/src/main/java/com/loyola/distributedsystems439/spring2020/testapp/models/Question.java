@@ -1,5 +1,8 @@
 package com.loyola.distributedsystems439.spring2020.testapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -76,5 +79,11 @@ public class Question {
 
     public void setResponses(List<Response> responses) {
         this.responses = responses;
+    }
+
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
     }
 }
