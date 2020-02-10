@@ -1,5 +1,6 @@
 package com.loyola.distributedsystems439.spring2020.testapp.clients;
 
+import com.loyola.distributedsystems439.spring2020.testapp.models.Question;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Response;
 
@@ -11,7 +12,7 @@ import retrofit2.http.POST;
 public interface TestClient {
 
     @GET("activateQuestion")
-    Call<Questions> activateQuestion();
+    Call<Question> fetchActiveQuestion();
 
     /*
      TODO: This endpoint does not exist in the server API yet. As od 2/9,
