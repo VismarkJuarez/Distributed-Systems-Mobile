@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.loyola.distributedsystems439.spring2020.testapp.R;
 import com.loyola.distributedsystems439.spring2020.testapp.clients.TestClient;
-import com.loyola.distributedsystems439.spring2020.testapp.models.Answer;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 
 import retrofit2.Call;
@@ -32,7 +31,7 @@ public class StudentHome extends AppCompatActivity {
         loadQuestionsButton.setOnClickListener(new LoadQuestionsButtonClicked());
 
         Button submitButton = (Button)findViewById(R.id.submitButton);
-        
+
         //Setting onClick behaviour
         submitButton.setOnClickListener(new SubmitButtonClicked());
 
