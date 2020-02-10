@@ -1,6 +1,7 @@
 package com.loyola.distributedsystems439.spring2020.testapp.clients;
 
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
+import com.loyola.distributedsystems439.spring2020.testapp.models.Response;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -20,5 +21,5 @@ public interface TestClient {
     Call<Questions> fetchAllQuestions();
 
     @POST("recordResponse")
-    Call<String> submitAnswer(@Body Answer answer);
+    Call<String> recordResponse(@Body Response answer);
 }
