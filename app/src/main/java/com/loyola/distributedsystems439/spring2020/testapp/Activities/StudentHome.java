@@ -14,6 +14,8 @@ import com.loyola.distributedsystems439.spring2020.testapp.R;
 import com.loyola.distributedsystems439.spring2020.testapp.clients.TestClient;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 
+import java.util.UUID;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -111,22 +113,31 @@ public class StudentHome extends AppCompatActivity {
         int questionId = Integer.parseInt(((EditText)findViewById(R.id.questionIdLabel)).getText().toString());
         //int questionIdAsInt = Integer.parseInt(questionIdAsString);
 
-        //extract the answer, as specified by the student (TODO this is ugly -- cleanup required.
-        String studentAnswer = ((EditText)findViewById(R.id.studentAnswerEditText)).getText().toString();
+        //Prepare the Response object's required parameters:
+        String kind = "response";
+        String type = "multiple_choice"; //TODO This information should be pulled from the question.
 
-        Answer answerData = new Answer(questionId, studentAnswer);
+        //extract the answer, as specified by the student (TODO this is ugly -- cleanup required.
+        String choice = ((EditText)findViewById(R.id.studentAnswerEditText)).getText().toString();
+
+        UUID user_id = UUID.randomUUID(); //create a random UUID as the user_id
+        String nickname = "Student"; //TODO the UI should have a screen for having the student select a nickname and to generate a student id
+
+        com.loyola.distributedsystems439.spring2020.testapp.models.Response responseData = new  com.loyola.distributedsystems439.spring2020.testapp.models.Response(kind, type, choice, user_id, nickname);
 
         Toast.makeText(getApplicationContext(),
                 "Answer has been submitted.",
                 Toast.LENGTH_LONG)
                 .show();
 
-        Log.i("INFO", "SENDING THE FOLLOWING PAYLOAD: " + answerData.toString());
+        Log.i("INFO", "SENDING THE FOLLOWING PAYLOAD: " + responseData.toString());
 
-        sendAnswer(answerData);
+        sendResponseToServer(responseData);
     }
 
-    private void sendAnswer(Answer answerData) {
+
+
+    private void sendResponseToServer(com.loyola.distributedsystems439.spring2020.testapp.models.Response answerData) {
 
         Log.i("INFO","Attempting to make REST call now!");
 
@@ -137,7 +148,7 @@ public class StudentHome extends AppCompatActivity {
         Retrofit retrofit = builder.build();
 
         TestClient client = retrofit.create(TestClient.class);
-        Call<String> call = client.submitAnswer(answerData);
+        Call<String> call = client.recordResponse(answerData);
 
         call.enqueue(new Callback<String>() {
 
@@ -147,7 +158,7 @@ public class StudentHome extends AppCompatActivity {
                         "Call made successfully!",
                         Toast.LENGTH_LONG)
                         .show();
-                Log.i("INFO","Call waas made successfully!");
+                Log.i("INFO","Call was made successfully!");
             }
 
             @Override
