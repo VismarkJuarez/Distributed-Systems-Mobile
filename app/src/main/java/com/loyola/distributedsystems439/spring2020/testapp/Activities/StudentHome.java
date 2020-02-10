@@ -69,7 +69,7 @@ public class StudentHome extends AppCompatActivity {
         Log.i("INFO","Attempting to fetch all Questions from the instructor server!");
 
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5001/")
+                .baseUrl("http://10.0.2.2:5000/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
@@ -133,7 +133,7 @@ public class StudentHome extends AppCompatActivity {
         Log.i("INFO","Attempting to make REST call now!");
 
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5001/")
+                .baseUrl("http://10.0.2.2:5000/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
