@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Activities.StudentHome"></activity>
         <activity android:name=".Activities.InstructorHome" />
-        <activity android:name=".UserInstructorSelection">
+        <activity android:name=".Activities.UserInstructorSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

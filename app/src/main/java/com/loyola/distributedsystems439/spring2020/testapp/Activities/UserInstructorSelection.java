@@ -1,10 +1,12 @@
-package com.loyola.distributedsystems439.spring2020.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.loyola.distributedsystems439.spring2020.testapp.R;
 
 public class UserInstructorSelection extends AppCompatActivity {
 

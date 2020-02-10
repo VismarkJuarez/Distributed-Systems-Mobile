@@ -1,4 +1,4 @@
-package com.loyola.distributedsystems439.spring2020.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp.clients;
 
 import com.loyola.distributedsystems439.spring2020.testapp.models.Answer;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loyola.distributedsystems439.spring2020.testapp.R;
-import com.loyola.distributedsystems439.spring2020.testapp.TestClient;
+import com.loyola.distributedsystems439.spring2020.testapp.clients.TestClient;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Answer;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 
