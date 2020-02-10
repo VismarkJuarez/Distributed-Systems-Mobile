@@ -1,4 +1,4 @@
-package com.loyola.distributedsystems439.spring2020.testapp;
+package com.loyola.distributedsystems439.spring2020.testapp.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.loyola.distributedsystems439.spring2020.testapp.R;
+import com.loyola.distributedsystems439.spring2020.testapp.TestClient;
+import com.loyola.distributedsystems439.spring2020.testapp.models.Answer;
+import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 
 import retrofit2.Call;
 import retrofit2.Callback;
