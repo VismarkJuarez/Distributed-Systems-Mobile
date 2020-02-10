@@ -1,5 +1,6 @@
 package com.loyola.distributedsystems439.spring2020.testapp.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +12,15 @@ import com.loyola.distributedsystems439.spring2020.testapp.R;
 public class UserInstructorSelection extends AppCompatActivity {
 
     //Creating references to the instructor and student buttons
-    private Button STUDENT_BUTTON;
-    private Button INSTRUCTOR_BUTTON;
+    private Button STUDENT_BUTTON; //Referencing the student button
+    private Button INSTRUCTOR_BUTTON; //Referencing the instructor button
+    private Intent studentHomeIntent; //A reference to be used to open the student home intent
 
     private void setup() {
         //Initializing button references
         STUDENT_BUTTON = (Button)findViewById(R.id.studentButton);
         INSTRUCTOR_BUTTON = (Button)findViewById(R.id.instructorButton);
+        studentHomeIntent = new Intent(this, StudentHome.class);
     }
 
     @Override
@@ -36,10 +39,8 @@ public class UserInstructorSelection extends AppCompatActivity {
     private class studentButtonClicked implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(),
-                    "StudentButton clicked!",
-                    Toast.LENGTH_LONG)
-                    .show();
+            //Open the student home screen
+            startActivity(studentHomeIntent);
         }
     }
 
