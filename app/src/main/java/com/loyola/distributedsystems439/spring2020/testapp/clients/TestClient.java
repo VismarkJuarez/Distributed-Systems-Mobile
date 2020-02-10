@@ -13,6 +13,10 @@ public interface TestClient {
     @GET("activateQuestion")
     Call<Questions> activateQuestion();
 
+    /*
+     TODO: This endpoint does not exist in the server API yet. As od 2/9,
+     we can only retrieve the current `activeQuestion`
+     */
     @GET("fetchAllQuestions")
     Call<Questions> fetchAllQuestions();
 

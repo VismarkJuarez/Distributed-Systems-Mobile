@@ -32,8 +32,7 @@ public class StudentHome extends AppCompatActivity {
         loadQuestionsButton.setOnClickListener(new LoadQuestionsButtonClicked());
 
         Button submitButton = (Button)findViewById(R.id.submitButton);
-
-
+        
         //Setting onClick behaviour
         submitButton.setOnClickListener(new SubmitButtonClicked());
 
