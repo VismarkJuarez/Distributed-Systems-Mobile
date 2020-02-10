@@ -10,9 +10,12 @@ import retrofit2.http.POST;
 
 public interface TestClient {
 
+    @GET("activateQuestion")
+    Call<Questions> activateQuestion();
+
     @GET("fetchAllQuestions")
     Call<Questions> fetchAllQuestions();
 
-    @POST("submitAnswer")
+    @POST("recordResponse")
     Call<String> submitAnswer(@Body Answer answer);
 }
