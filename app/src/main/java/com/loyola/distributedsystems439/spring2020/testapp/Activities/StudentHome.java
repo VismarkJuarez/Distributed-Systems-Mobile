@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.loyola.distributedsystems439.spring2020.testapp.R;
 import com.loyola.distributedsystems439.spring2020.testapp.clients.TestClient;
+import com.loyola.distributedsystems439.spring2020.testapp.models.Question;
 import com.loyola.distributedsystems439.spring2020.testapp.models.Questions;
 
 import java.util.UUID;
@@ -50,7 +51,7 @@ public class StudentHome extends AppCompatActivity {
     private class LoadQuestionsButtonClicked implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            fetchAllQuestions();
+            retrieveActiveQuestion();
         }
     }
 
@@ -65,6 +66,7 @@ public class StudentHome extends AppCompatActivity {
         questionTextView.setText(allQuestions);
     }
 
+    //TODO The fetchAllQuestions() method may actually not be used since the server API does not support bulk retrieval of all questions
     private String fetchAllQuestions() {
         Log.i("INFO","Attempting to fetch all Questions from the instructor server!");
 
@@ -100,7 +102,44 @@ public class StudentHome extends AppCompatActivity {
         });
 
         return "All good"; //TODO refactor this out
+    }
 
+
+    private String retrieveActiveQuestion() {
+        Log.i("INFO","Attempting to fetch the active qestion from the instructor server!");
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:5000/")
+                .addConverterFactory(GsonConverterFactory.create());
+
+        Retrofit retrofit = builder.build();
+
+        TestClient client = retrofit.create(TestClient.class);
+        Call<Question> call = client.fetchActiveQuestion();
+
+        call.enqueue(new Callback<Question>() {
+
+            @Override
+            public void onResponse(Call<Question> call, Response<Question> response) {
+                Toast.makeText(getApplicationContext(),
+                        "Call made successfully!",
+                        Toast.LENGTH_LONG)
+                        .show();
+                Log.i("INFO","Call was made successfully!");
+
+                Log.i("INFO", response.body().toString());
+                renderAllQuestions(response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<Question> call, Throwable t) {
+                Log.i("ERROR","Something blew up!");
+                t.printStackTrace();
+                Log.i("INFO", call.request().toString());
+            }
+        });
+
+        return "All good"; //TODO refactor this out
     }
 
 
