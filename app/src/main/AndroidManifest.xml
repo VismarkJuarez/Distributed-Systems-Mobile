@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".StudentHome"></activity>
         <activity android:name=".InstructorHome" />
+        <activity android:name=".MCScreen"/>
+        <activity android:name=".fill_blank_screen"/>
+        <activity android:name=".true_false_screen"/>
         <activity android:name=".UserInstructorSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

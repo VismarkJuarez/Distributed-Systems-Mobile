@@ -106,7 +106,7 @@ public class StudentHome extends AppCompatActivity {
 
         //extract the questionId, as specified by the student
         int questionId = Integer.parseInt(((EditText)findViewById(R.id.questionIdLabel)).getText().toString());
-        //int questionIdAsInt = Integer.parseInt(questionIdAsString);
+        //int questionIdAsInt = Integer.parseInt(questionIdAsSmtring);
 
         //extract the answer, as specified by the student (TODO this is ugly -- cleanup required.
         String studentAnswer = ((EditText)findViewById(R.id.studentAnswerEditText)).getText().toString();
