@@ -13,9 +13,9 @@ public class InstructorHome extends AppCompatActivity {
     private Button true_false_btn;
 
     public void setup(){
-        multiple_choice_btn = (Button)findViewById(R.id.MultipleChoice);
-        fill_in_blank_btn = (Button)findViewById(R.id.fill_in_blank);
-        true_false_btn = (Button)findViewById(R.id.true_false);
+        multiple_choice_btn = (Button)findViewById(R.id.MultipleChoicebtn);
+        fill_in_blank_btn = (Button)findViewById(R.id.fill_in_blankbtn);
+        true_false_btn = (Button)findViewById(R.id.true_falsebtn);
 
 
     }
@@ -23,8 +23,11 @@ public class InstructorHome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instructor_home);
+        setContentView(R.layout.activity_multiple_choice);
         setup();
+        multiple_choice_btn.setOnClickListener(new chose_multiple_choice());
+        fill_in_blank_btn.setOnClickListener(new chose_fill_in_blank());
+        true_false_btn.setOnClickListener(new chose_true_false());
 
     }
 
