@@ -1,5 +1,6 @@
 package com.loyola.distributedsystems439.spring2020.testapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,7 @@ public class UserInstructorSelection extends AppCompatActivity {
                     "StudentButton clicked!",
                     Toast.LENGTH_LONG)
                     .show();
+            startActivity(new Intent(UserInstructorSelection.this, StudentHome.class));
         }
     }
 
@@ -48,6 +50,7 @@ public class UserInstructorSelection extends AppCompatActivity {
                     "InstructorButton clicked!",
                     Toast.LENGTH_LONG)
                     .show();
+            startActivity(new Intent(UserInstructorSelection.this, InstructorHome.class));
         }
     }
 
