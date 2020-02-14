@@ -8,12 +8,55 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="49dp">
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
+            android:textSize="32sp"
             android:layout_height="wrap_content"
-            android:text="Instructor Home"/>
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="687dp"
+            android:text="Select Question Type..." />
+
+        <Button
+            android:id="@+id/MultipleChoice"
+            android:layout_width="352dp"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="560dp"
+            android:text="Multiple Choice" />
+
+        <Button
+            android:id="@+id/fill_in_blank"
+            android:layout_width="352dp"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="382dp"
+            android:text="Fill in The Blank" />
+
+        <Button
+            android:id="@+id/true_false"
+            android:layout_width="352dp"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="476dp"
+            android:text="True Or False" />
+
+        <Button
+            android:id="@+id/submitAnswer"
+            android:layout_width="352dp"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="150dp"
+            android:text="Continue" />
 
 
     </RelativeLayout>
