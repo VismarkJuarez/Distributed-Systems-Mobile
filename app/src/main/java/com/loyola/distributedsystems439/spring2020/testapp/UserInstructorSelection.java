@@ -12,11 +12,13 @@ public class UserInstructorSelection extends AppCompatActivity {
     //Creating references to the instructor and student buttons
     private Button STUDENT_BUTTON;
     private Button INSTRUCTOR_BUTTON;
+    private Button QR_BUTTON;
 
     private void setup() {
         //Initializing button references
         STUDENT_BUTTON = (Button)findViewById(R.id.studentButton);
         INSTRUCTOR_BUTTON = (Button)findViewById(R.id.instructorButton);
+        QR_BUTTON = (Button)findViewById(R.id.QRButton);
     }
 
     @Override
@@ -29,7 +31,21 @@ public class UserInstructorSelection extends AppCompatActivity {
         //setting onClick behaviour
         STUDENT_BUTTON.setOnClickListener(new studentButtonClicked());
         INSTRUCTOR_BUTTON.setOnClickListener(new instructorButtonClicked());
+        QR_BUTTON.setOnClickListener(new instructorButtonClicked());
     }
+    //OnClick button handler classes
+    private class QRButtonClicked implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(getApplicationContext(),
+                    "QRButton clicked!",
+                    Toast.LENGTH_LONG)
+                    .show();
+            startActivity(new Intent(UserInstructorSelection.this, QRcode.class));
+        }
+    }
+
+
 
     //OnClick button handler classes
     private class studentButtonClicked implements View.OnClickListener {

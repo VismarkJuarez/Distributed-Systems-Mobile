@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.loyola.distributedsystems439.spring2020.testapp.MainActivity">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -38,6 +38,15 @@
         android:layout_height="wrap_content"
         android:text="Student"
         android:layout_below="@id/instructorButton"/>
+
+
+    <Button
+        android:id="@+id/QRButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructorButton"
+        android:layout_marginTop="120dp"
+        android:text="QR Code Scanner" />
 
 </RelativeLayout>
 
