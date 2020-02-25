@@ -1,5 +1,4 @@
 package com.loyola.distributedsystems439.spring2020.testapp;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,8 +43,6 @@ public class UserInstructorSelection extends AppCompatActivity {
             startActivity(new Intent(UserInstructorSelection.this, QRcode.class));
         }
     }
-
-
 
     //OnClick button handler classes
     private class studentButtonClicked implements View.OnClickListener {
